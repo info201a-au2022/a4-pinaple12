@@ -149,7 +149,8 @@ plot_demographic_ratios <- function() {
     xlab("Year") +
     ylab("Population Proportion") + 
     labs(title = "Population Proportion by Race") +
-    scale_colour_manual(name = "Key", values = c("Black Inmates Proportion" = "Red", "White Inmates Proportion" = "Blue", "Black Population Proportion" = "Pink", "White Population Proporton" = "Cyan"))
+    scale_colour_manual(name = "Key", values = c("Black Inmates Proportion" = "Red", "White Inmates Proportion" = "Blue", "Black Population Proportion" = "Pink", "White Population Proportion" = "Cyan"))
+    return(demographic_plot)
 }
 
 #This function returns a plot that shows the difference between inmate population proportion
