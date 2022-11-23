@@ -29,7 +29,7 @@ In the year 2000, the national proportion of black inmates was `r black_prison_p
 
 Even more alarming though, is after we consider the fact that in the general population data (calculated from people aged 15-64), we see that black people make up `r black_pop_per`% of the population of the US, while white people make up `r white_pop_per`% of the population. This means that in the year 2000, black people were jailed at a *disproportionately* high rate - a trend that continues even today. 
 
-#Growth of the US Prison Population
+## Growth of the US Prison Population
 Is mass incarceration still used today? The following chart is a barchart visualizing general prison population growth rate.
 
 ```{r jail plot us, echo = FALSE}
@@ -38,7 +38,7 @@ plot_jail_pop_for_us()
 
 In the barchart, we can see an alarming trend - the amount of inmates has more than quadrupled since 1970. Although we have been seeing a recent decline, the growth in jail population shows that mass incarceration is being used more prominently as of recently.
 
-#Growth of Prison Population by State
+## Growth of Prison Population by State
 How does prison population growth look like in different states? The following chart is a line graph visualizing jail population growth rate in a small sample of states. The states included are Alabama, California, New York, Oregon, and Washington. 
 
 ```{r jail plot state, echo = FALSE}
@@ -47,7 +47,7 @@ plot_jail_pop_by_states(states_plotted)
 
 In the graph above, prison population growth rates for particular states of varying political affiliation are shown. While all of the states shown have experienced a general increase in inmate population, California has shot up the most. This may be a reflection of policy, population growth, or more unconsidered factors. Aside from California, the other chosen states have shown similar less aggressive growth rates over the years. 
 
-#Population Proportion and Inmate Proportion by Race
+## Population Proportion and Inmate Proportion by Race
 Are certain communities imprisoned at higher rates than others? The following charts show the disproportionate rate at which black individuals are imprisoned as compared to white individuals. 
 
 ```{r jail proportion plot, echo = FALSE}
@@ -62,7 +62,7 @@ plot_difference_demographic()
 
 This graph shows the difference between inmate proportion and population proportion for the white and black communities. As we can see, black inmates are over represented by about 20% when compared to black population proportion while white inmates are under represented by about 10% in the same metric. Although the gap between proportions is slowly trending towards 0, there is still a lot of work to be done in order to mitigate the disproportionate representation of black individuals in the prison system. 
 
-#Map of Inmate/Population Proportion Differences Through Time
+## Map of Inmate/Population Proportion Differences Through Time
 Which states have taken steps to mitigate the disproportional representation of black inmates? The following map of the United States shows the increase or decrease in the proportional gap of black and white prison population proportions compared to black and white population size. 
 
 ```{r proportion over the years plot, echo = FALSE}
