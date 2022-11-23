@@ -159,7 +159,7 @@ plot_difference_demographic <- function() {
   difference_plot <- ggplot(demographic_df, aes(x = year)) + 
     geom_line(aes(y = black_inmate_population_diff, color = "African American")) + 
     geom_line(aes(y = white_inmate_population_diff, color = "White")) +
-    scale_colour_manual(name = "Key", values = c("Black Proportional Difference" = "Black", "White Proportional Difference" = "Grey")) +
+    scale_colour_manual(name = "Key", values = c("African American" = "Black", "White" = "Grey")) +
     xlab("Year") + 
     ylab("Proportional Difference") +
     labs(title = "Difference between Inmate Proportion and Population Proportion",
