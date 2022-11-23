@@ -1,6 +1,6 @@
 ---
-title: "Your A4 Report Title (TODO: Revise title)"
-author: "Your Name"
+title: "An Analysis on Disproportional Incarceration in the US"
+author: "Justin Dong"
 date: '2022-11-01'
 output: html_document
 ---
@@ -11,35 +11,63 @@ source("../source/analysis.R")
 ```
 
 ## Abstract 
-[TODO: Include a short abstract (about 50 words)]
 
-# Test (TODO: Remove before submission!!)
-```{r echo=FALSE}
-q1_string <- test_query1()
-num <- 5
-```
-As you know, this is a markdown report. The [R Markdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) is **useful!**
-
-* Here's a test of a dynamic variable. Say **"`r q1_string`!!!** 
-* Here's another test. A vector
-of numbers: `r test_query2(num)`.
-
-Recall that _{r echo=TRUE}_ can be used to display the code, 
-which is very useful when developing and debugging a report. Here's an example: 
-
-```{r echo=TRUE}
-num <- 5
-sum <- sum(test_query2(num))
-print(sum)
-```
+The United States prison system is one of the most prominent tools that plays a part in the oppression of people of color. This website focuses on the disproportionate imprisonment rate of the African American community in particular and compares it to the imprisonment rate of White people.
 
 ## Introduction 
-[TODO]
+This website uses data gathered by the Vera Institute, an organization dedicated to fighting mass incarcerations and the criminalization of marginalized communities. The dataset used contains information regarding general population sizes and prison population sizes with a variety of demographic specific data observations such as race and gender populations. This data is important, as it provides us with data that can challenge the structural domain in the matrix of oppression. The prison system has long been a way for governmental authorities to distrupt and oppress minority communities while favoring white cisgendered men. 
+
+In this report, the structural domain of oppression will be challenged through a thorough analysis into the data collected by the Vera Institute. I will be demonstrating the disproportional imprisonment of the African American community and compare it to the imprisonment rate of white people. This report impacts the following communities:
+
+- *Direct Shareholder:* The primary group this information impacts are groups with impact on policy, such as lobbyists or politicians. This data shows potential points of inequality with the US prison system, and aims to address it by exposing it to people who can make a change.
+- *Indirect Shareholder:* The secondary group this information impacts would be all citizens of the United States, as both general population data and prison inmate population data are used in this report. 
 
 ## Data Summary 
-[TODO]
+The dataset I am using for this summary contains a wealthy amount of information - the following are some key metrics I have analyzed from the data to provide a general overview of the patterns of inequality this report hopes to hone in on. 
 
-[TODO ... other sections ... See Canvas for details]
+In the year 2000, the national proportion of black inmates was `r black_prison_prop`, while the national proportion of white inmates was `r white_prison_prop`. From this data alone, we can see that the proportion of black inmates is dramatically higher than that of white inmates. 
 
-_All the very best with your work!_
+Even more alarming though, is after we consider the fact that in the general population data (calculated from people aged 15-64), we see that black people make up `r black_pop_per`% of the population of the US, while white people make up `r white_pop_per`% of the population. This means that in the year 2000, black people were jailed at a disproportionately high rate - a trend that continues even today. 
+
+#Growth of the US Prison Population
+Is mass incarceration still used today? The following chart is a barchart visualizing general prison population growth rate.
+
+```{r jail plot us}
+plot_jail_pop_for_us()
+```
+
+In the barchart, we can see an alarming trend - the amount of inmates has more than quadrupled since 1970. Although we have been seeing a recent decline, the growth in jail population shows that mass incarceration is being used more prominently as of recently.
+
+#Growth of Prison Population by State
+How does prison population growth look like in different states? The following chart is a line graph visualizing jail population growth rate in a small sample of states. The states included are Alabama, California, New York, Oregon, and Washington. 
+
+```{r jail plot state}
+plot_jail_pop_by_states(states_plotted)
+```
+
+In the graph above, prison population growth rates for particular states of varying political affiliation are shown. While all of the states shown have experienced a general increase in inmate population, California has shot up the most. This may be a reflection of policy, population growth, or more unconsidered factors. Aside from California, the other chosen states have shown similar less aggressive growth rates over the years. 
+
+#Population Proportion and Inmate Proportion by Race
+Are certain communities imprisoned at higher rates than others? The following charts show the disproportionate rate at which black individuals are imprisoned as compared to white individuals. 
+
+```{r jail proportion plot}
+plot_demographic_ratios()
+```
+
+The graph above shows black inmate proportion, white inmate proportion, black population proportion, and white population proportion over the years. One noticeable trend is that while the white population proportion is much higher than the black population proportion over the years, the rate at which black inmates are imprisoned is much higher. The following graph provides a better visualization of this. 
+
+```{r proportion difference plot}
+plot_difference_demographic()
+```
+
+This graph shows the difference between inmate proportion and population proportion for the white and black communities. As we can see, black inmates are over represented by about 20% when compared to black population proportion while white inmates are under represented by about 10% in the same metric. Although the gap between proportions is slowly trending towards 0, there is still a lot of work to be done in order to mitigate the disproportionate representation of black individuals in the prison system. 
+
+#Map of Inmate/Population Proportion Differences Through Time
+Which states have taken steps to mitigate the disproportional representation of black inmates? The following map of the United States shows the increase or decrease in the proportional gap of black and white prison population proportions compared to black and white population size. 
+
+```{r proportion over the years plot}
+get_heat_map()
+```
+
+This map shows that most states have taken steps towards decreasing the difference in proportion of black inmates and black population, with the most prominent difference occurring in the South Eastern region of the United States. The least amount of difference can be seen in the Northern Midwest, where the proportional difference actually increased. Data is unavailable for Hawaii, Rhode Island, Connecticut, and Vermont. As a result, they are grayed out on the map.  
 
