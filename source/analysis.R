@@ -145,7 +145,7 @@ plot_demographic_ratios <- function() {
     geom_line(aes(y = black_jail_prop, color = "Black Inmates Proportion")) + 
     geom_line(aes(y = white_jail_prop, color = "White Inmates Proportion")) + 
     geom_line(aes(y = black_population_prop, color = "Black Population Proportion")) +
-    geom_line(aes(y = white_population_prop, color = "White Population Proporton")) +
+    geom_line(aes(y = white_population_prop, color = "White Population Proportion")) +
     xlab("Year") +
     ylab("Population Proportion") + 
     labs(title = "Population Proportion by Race") +
